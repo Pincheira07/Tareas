@@ -50,7 +50,7 @@ public class VendedorSopapipillas {
 
     }
 
-    public static int calcularVuelto(int pago, int valorReal){
+    public int calcularVuelto(int pago, int valorReal){
         int vuelto = 0;
         if (valorReal < pago){
          vuelto = pago-valorReal;
@@ -59,7 +59,7 @@ public class VendedorSopapipillas {
     }
 
 
-    public void setSopaipillas(int cantidad) {
+    public void restarSopaipillas(int cantidad) {
         this.sopaipillas -=cantidad;
     }
 
