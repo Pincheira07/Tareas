@@ -19,7 +19,17 @@ class VendedorSopapipillasTest {
     public void calcularVueltoTest() {
         int resta = ejemploSopaipillasTest.calcularVuelto(1000,500);
         assertEquals(500,resta);
-
-
+    }
+    @Test
+    public void recibirDineroTest(){
+        int recibido = ejemploSopaipillasTest.recibirDinero(5000);
+        int esperado = ejemploSopaipillasTest.getDinero();
+        assertEquals(esperado, recibido);
+    }
+    @Test
+    public void getSopaipillasTest(){
+        ejemploSopaipillasTest.setSopaipillas(500);
+        ejemploSopaipillasTest.restarSopaipillas(50);
+        assertEquals(450,ejemploSopaipillasTest.getSopaipillas());
     }
 }

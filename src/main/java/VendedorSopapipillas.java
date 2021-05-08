@@ -83,4 +83,8 @@ public class VendedorSopapipillas {
     public void setDinero(int dinero) {
         this.dinero = dinero;
     }
+
+    public void setSopaipillas(int sopaipillas) {
+        this.sopaipillas = sopaipillas;
+    }
 }
