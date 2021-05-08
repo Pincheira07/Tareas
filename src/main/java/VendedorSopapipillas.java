@@ -25,9 +25,12 @@ public class VendedorSopapipillas {
         this.sopaipillas += cantidad;
         return this.sopaipillas;
     }
+
     public void venderSopaipillas(){
         System.out.println("¿Cuantas sopaipillas quiere comprar?");
-        leerCantidad();
+        int cantidad = leerCantidad();
+        restarSopaipillas(cantidad);
+        cobrar(cantidad);
     }
 
     public int recibirDinero(int valor) {
@@ -41,12 +44,13 @@ public class VendedorSopapipillas {
         return valorCantidad;
     }
 
-    public void cobrar(){
+    public void cobrar(int cantidad){
         Scanner input = new Scanner(System.in);
-        int valorCantidad = calcularMonto(getSopaipillas());
+        int valorCantidad = calcularMonto(cantidad);
         System.out.println("Introducir monto: ");
         int pago = input.nextInt();
-        calcularVuelto(pago, valorCantidad);
+        System.out.println("Su vuelto: " + calcularVuelto(pago, valorCantidad));
+        recibirDinero(pago);
 
     }
 
@@ -54,8 +58,13 @@ public class VendedorSopapipillas {
         int vuelto = 0;
         if (valorReal < pago){
          vuelto = pago-valorReal;
+         darVuelto(vuelto);
         }
         return vuelto;
+    }
+
+    public void darVuelto(int vuelto){
+        this.dinero-=vuelto;
     }
 
 
@@ -69,5 +78,9 @@ public class VendedorSopapipillas {
 
     public int getDinero() {
         return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
     }
 }

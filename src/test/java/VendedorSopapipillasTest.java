@@ -8,25 +8,13 @@ class VendedorSopapipillasTest {
     VendedorSopapipillas ejemploSopaipillasTest = new VendedorSopapipillas("Luis", "Gonzales");
 
 
-
     @Test
-    public void leerCantidadTest() {
-
+    public void darVueltoTest(){
+        ejemploSopaipillasTest.setDinero(5000);
+        ejemploSopaipillasTest.darVuelto(50);
+        assertEquals(4950,ejemploSopaipillasTest.getDinero());
     }
 
-    @Test
-    public void hacerSopaipillasTest() {
-        ejemploSopaipillasTest.hacerSopaipillas();
-        assertEquals(50,ejemploSopaipillasTest.getSopaipillas());
-
-    }
-
-    @Test
-    public void getSopaipillasTest() {
-        ejemploSopaipillasTest.restarSopaipillas(50);
-
-
-    }
     @Test
     public void calcularVueltoTest() {
         int resta = ejemploSopaipillasTest.calcularVuelto(1000,500);
